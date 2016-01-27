@@ -1,0 +1,30 @@
+
+<?php
+
+return [
+    'welcome' => 'E-Mailsig for E-people',
+    'crys' => 'Create Free Signature Now',
+    'create' => 'Create Your Signature',
+    'info' => 'Your Information',
+    'main' => 'Main',
+    'social' => 'Social',
+    'name' => 'Name: ',
+    'job' => 'Job Title: ',
+    'company' => 'Company: ',
+    'phone' => 'Mobile: ',
+    'officephone' => 'Office: ',
+    'address' => 'Address: ',
+    'address2' => 'Address 2: ',
+    'upavatar' => 'Upload Your Photo',
+    'chooseava' => 'Choose File',
+    'avareq' => 'Please choose your avatar for your email signature (*.jpg, png,...)',
+    'chyt' => 'Choose Your Template',
+    'crsi' => 'Create Signatures',
+    'newemail' => 'New Email',
+    'email_to' => 'To: DC Team',
+    'email_sub' => 'Subject: Urgent business',
+    'email_hi' => 'Hi DC Team, ',
+    'email_body1' => 'Please head over to',
+    'email_body2' => 'to create the email signatures for the team. Once created use the dashboard to send them over to each employee',
+    'email_tks' => 'Sincere',
+];
