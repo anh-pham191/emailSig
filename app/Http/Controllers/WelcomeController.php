@@ -33,8 +33,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		$location = GeoIP::getLocation('42.112.233.129');
-		return view('welcome')->with('location', $location);
+		return view('welcome');
 	}
 
 }

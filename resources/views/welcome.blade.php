@@ -44,28 +44,6 @@
         <div class="quote">{{ Inspiring::quote() }}</div>
     </div>
 
-    <div id="location">
-
-        <p>{!! $location['ip'] !!}</p>
-
-        <p>{!! $location['isoCode'] !!}</p>
-
-        <p>{!! $location['country'] !!}</p>
-
-        <p>{!! $location['city'] !!}</p>
-
-        <p>{!! $location['postal_code'] !!}</p>
-
-        <p>{!! $location['lat'] !!}</p>
-
-        <p>{!! $location['lon'] !!}</p>
-
-        <p>{!! $location['timezone'] !!}</p>
-
-        <p>{!! $location['continent'] !!}</p>
-
-
-    </div>
 
 </div>
 </body>

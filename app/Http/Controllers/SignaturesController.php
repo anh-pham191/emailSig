@@ -85,7 +85,7 @@ class SignaturesController extends Controller
 //                Image::make($image->getRealPath())->resize(468, 249)->save($path);
 
                 $size = '200,200';
-                Image::make($image->getRealPath())->resize(intval($size), null, function($contstraint){
+                Image::make($image->getRealPath())->resize(intval($size), null, function ($contstraint) {
                     $contstraint->aspectRatio();
                 })->save($path);
                 $signature->image = 'img/' . $filename;
@@ -110,55 +110,30 @@ class SignaturesController extends Controller
             $stackoverflow = $signature->stackoverflow;
             $github = $signature->github;
             $instagram = $signature->instagram;
-            $image2= $signature->image;
-            return view('signatures.result')->with('signatures', $signature)->with('name',$name)->with('image',$image2)
-                ->with('jobtitle',$jobtitle)->with('email',$email)->with('company',$company)
-                ->with('phone',$phone)->with('website',$website)->with('officephone',$officephone)
-                ->with('fax',$fax)->with('address',$address)->with('address2',$address2)
-                ->with('facebook',$facebook)->with('twitter',$twitter)->with('youtube',$youtube)
-                ->with('skype',$skype)->with('googleplus',$googleplus)->with('linkedin',$linkedin)
-                ->with('stackoverflow',$stackoverflow)->with('github',$github)->with('instagram',$instagram);
+            $image2 = $signature->image;
+            return view('signatures.result')->with('signatures', $signature)->with('name', $name)->with('image', $image2)
+                ->with('jobtitle', $jobtitle)->with('email', $email)->with('company', $company)
+                ->with('phone', $phone)->with('website', $website)->with('officephone', $officephone)
+                ->with('fax', $fax)->with('address', $address)->with('address2', $address2)
+                ->with('facebook', $facebook)->with('twitter', $twitter)->with('youtube', $youtube)
+                ->with('skype', $skype)->with('googleplus', $googleplus)->with('linkedin', $linkedin)
+                ->with('stackoverflow', $stackoverflow)->with('github', $github)->with('instagram', $instagram);
         }
         return view('signatures.index')->withErrors($validator)->with('signatures', Signature::all());
     }
 
     public function getLangEn()
     {
-//        $location = GeoIP::getLocation('42.114.37.41');
-        $location = GeoIP::getLocation();
         $lang = 'vi';
-        if ($location['isoCode'] == "VN") {
-            $lang = 'vi';
-            App::setLocale($lang);
-            return view('signatures.index');
-        } else {
-            $lang = 'en';
-            App::setLocale($lang);
-            return view('signatures.index');
-        }
-//        Session::set('applocale',$lang);
-//        return redirect('signatures/upload');
-//        return view('signatures.index');
+        App::setLocale($lang);
+        return view('signatures.index');
+
     }
 
     public function getLangVi()
     {
-        $location = GeoIP::getLocation('42.114.37.41');
-//        $location = GeoIP::getLocation();
         $lang = 'vi';
-        if ($location['isoCode'] == "VN") {
-            $lang = 'vi';
-            App::setLocale($lang);
-            Session::set('applocale', $lang);
-            return view('signatures.index');
-        } else {
-            $lang = 'en';
-            App::setLocale($lang);
-            Session::set('applocale', $lang);
-            return view('signatures.index');
-        }
-//        Session::set('applocale',$lang);
-//        return redirect('signatures/upload');
-//        return view('signatures.index');
+        App::setLocale($lang);
+        return view('signatures.index');
     }
 }

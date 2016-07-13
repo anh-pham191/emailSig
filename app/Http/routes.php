@@ -14,7 +14,7 @@
 //Route::get('/', 'UploadsController@index');
 //Route::get('upload', 'UploadsController@upload');
 //Route::post('update','UploadsController@update');
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'SignaturesController@getIndex');
 Route::get('home', 'HomeController@index');
 Route::controller('signatures', 'SignaturesController');
 
@@ -24,14 +24,7 @@ Route::controllers([
 ]);
 
 Route::filter('locale', function () {
-    $location = GeoIP::getLocation('42.114.37.41');
-//    $location = GeoIP::getLocation();
-
-    if ($location['isoCode'] == "VN") {
-        Lang::setLocale('vi');
-    } else {
-        Lang::setLocale('en');
-    }
+    Lang::setLocale('vi');
 });
 Route::get('lang/en', 'SignaturesController@getLangEn');
 Route::get('lang/vi', 'SignaturesController@getLangVi');
